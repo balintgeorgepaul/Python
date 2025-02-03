@@ -19,4 +19,4 @@ df["title"] = df["title"].str.title()  # Transformare titluri în format titlu
 # save the data into excel file
 df.to_excel(EXCEL_FILE, index=False)
 
-print(f"Data have been saved! {EXCEL_FILE}!")
+print(f"Data has been saved! {EXCEL_FILE}!")
