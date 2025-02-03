@@ -1,22 +1,22 @@
 import requests
 import pandas as pd
 
-# Configurare fișier Excel
+# configure excel file
 EXCEL_FILE = "api_data.xlsx"
 
-# Conectare la API
+# appi connection
 API_URL = "https://jsonplaceholder.typicode.com/posts"
 response = requests.get(API_URL)
 data = response.json()
 
-# Transformare în DataFrame
+# create the dataframe
 df = pd.DataFrame(data)
 
-# Data Cleansing
+# small data cleansing
 df = df.dropna()  # Eliminare valori lipsă
 df["title"] = df["title"].str.title()  # Transformare titluri în format titlu
 
-# Salvează datele într-un fișier Excel
+# save the data into excel file
 df.to_excel(EXCEL_FILE, index=False)
 
-print(f"Datele au fost salvate cu succes in fisierul {EXCEL_FILE}!")
+print(f"Data have been saved! {EXCEL_FILE}!")
